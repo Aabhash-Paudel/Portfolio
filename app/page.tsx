@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Main content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto w-full">
           <MedievalFrame className="" title="Security Clearance: Level 5">
             <div
               className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -45,7 +45,7 @@ export default function Home() {
             >
               <div className="w-16 h-px bg-zinc-700 mx-auto mb-8" />
 
-              <p className="font-sans text-lg md:text-xl text-zinc-200 tracking-wide max-w-2xl mx-auto leading-relaxed font-medium">
+              <p className="font-sans text-lg md:text-xl lg:text-2xl text-zinc-200 tracking-wide max-w-3xl mx-auto leading-relaxed font-medium">
                 Observation &bull; Discipline &bull; Defense
               </p>
             </div>

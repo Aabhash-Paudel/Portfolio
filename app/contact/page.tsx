@@ -59,7 +59,7 @@ export default function ContactPage() {
       <Navigation />
 
       <section id="contact" className="relative min-h-screen pt-24 pb-16 flex items-center">
-        <div className="max-w-4xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 w-full">
           {/* Header */}
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -79,7 +79,7 @@ export default function ContactPage() {
 
           {/* Contact Links */}
           <div
-            className={`space-y-4 max-w-lg mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`space-y-4 max-w-2xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
             {contactLinks.map((link, index) => (

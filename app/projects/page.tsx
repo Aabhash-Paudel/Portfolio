@@ -66,7 +66,7 @@ export default function ProjectsPage() {
       <Navigation />
 
       <section id="projects" className="relative min-h-screen pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
           {/* Header */}
           <div
             className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

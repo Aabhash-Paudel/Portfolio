@@ -39,7 +39,7 @@ export default function AboutPage() {
       <Navigation />
 
       <section id="about" className="relative min-h-screen pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10 w-full">
           {/* Header */}
           <div
             className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
