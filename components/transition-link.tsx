@@ -10,25 +10,23 @@ type TransitionLinkProps = ComponentProps<typeof Link>
 export function TransitionLink({ href, children, onClick, ...props }: TransitionLinkProps) {
     const router = useRouter()
     const pathname = usePathname()
-    const { triggerPageTransition, isInitialLoad } = useTransitionContext()
+    const { triggerPageTransition } = useTransitionContext()
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
         // Call original onClick if provided
         onClick?.(e)
 
+        const hrefString = typeof href === 'string' ? href : href.pathname || ''
+        
         // Don't intercept if:
         // - Default was prevented
         // - It's the same page
         // - It's an external link
-        // - Initial load isn't complete
-        const hrefString = typeof href === 'string' ? href : href.pathname || ''
-        
         if (
             e.defaultPrevented ||
             pathname === hrefString ||
             hrefString.startsWith('http') ||
-            hrefString.startsWith('mailto:') ||
-            isInitialLoad
+            hrefString.startsWith('mailto:')
         ) {
             return
         }
@@ -38,10 +36,10 @@ export function TransitionLink({ href, children, onClick, ...props }: Transition
         // Trigger the spider transition
         triggerPageTransition()
 
-        // Navigate after a short delay to let the curtain close first
+        // Navigate after a short delay to let the curtain appear first
         setTimeout(() => {
             router.push(hrefString)
-        }, 600)
+        }, 400)
     }
 
     return (

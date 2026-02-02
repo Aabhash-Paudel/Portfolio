@@ -5,15 +5,12 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useTransitionContext } from './transition-context'
 
 export function CurtainTransition() {
-    const { setIsTransitioning, isInitialLoad, isPageTransitionActive } = useTransitionContext()
+    const { setIsTransitioning, isPageTransitionActive } = useTransitionContext()
     const shouldReduceMotion = useReducedMotion()
     const [isPresent, setIsPresent] = useState(false)
     const hasAnimated = useRef(false)
 
     useEffect(() => {
-        // Skip if this is the initial load (loading screen handles that)
-        if (isInitialLoad) return
-        
         // Only trigger when page transition is active
         if (!isPageTransitionActive) return
         
@@ -39,7 +36,7 @@ export function CurtainTransition() {
 
         sequence()
 
-    }, [isPageTransitionActive, isInitialLoad, setIsTransitioning])
+    }, [isPageTransitionActive, setIsTransitioning])
 
     // Reduced motion: simple fade
     if (shouldReduceMotion) {
