@@ -1,9 +1,9 @@
 "use client"
 
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Navigation } from '@/components/navigation'
 import { MedievalFrame } from '@/components/medieval-decorations'
+import { TransitionLink } from '@/components/transition-link'
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false)
@@ -56,18 +56,18 @@ export default function Home() {
                 }`}
             >
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
-                <Link
+                <TransitionLink
                   href="/projects"
                   className="group relative px-8 py-3 bg-foreground text-background font-semibold text-sm tracking-wide rounded border border-foreground overflow-hidden transition-all duration-300 hover:tracking-widest"
                 >
                   <span className="relative z-10">View Projects</span>
-                </Link>
-                <Link
+                </TransitionLink>
+                <TransitionLink
                   href="/contact"
                   className="btn-slide px-8 py-3 border border-zinc-700 text-zinc-300 font-semibold text-sm tracking-wide rounded transition-all duration-300 hover:border-foreground"
                 >
                   Get In Touch
-                </Link>
+                </TransitionLink>
               </div>
             </div>
           </MedievalFrame>
@@ -78,7 +78,7 @@ export default function Home() {
               }`}
           >
             <div className="mt-20">
-              <Link
+              <TransitionLink
                 href="/about"
                 className="group inline-flex flex-col items-center text-zinc-600 hover:text-zinc-300 transition-colors duration-500"
                 aria-label="Learn more about me"
@@ -99,7 +99,7 @@ export default function Home() {
                     d="M19 14l-7 7m0 0l-7-7m7 7V3"
                   />
                 </svg>
-              </Link>
+              </TransitionLink>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { TransitionLink } from './transition-link'
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -40,7 +40,7 @@ export function Navigation() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo - Leftmost position */}
-          <Link
+          <TransitionLink
             href="/"
             className="group flex items-center gap-2 font-sans text-xl font-bold relative tracking-tight transition-all duration-500 hover:text-white text-foreground"
           >
@@ -48,14 +48,14 @@ export function Navigation() {
               <span className="text-2xl font-black bg-gradient-to-br from-white to-zinc-400 bg-clip-text text-transparent">AP</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
             </span>
-          </Link>
+          </TransitionLink>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
-                <Link
+                <TransitionLink
                   key={item.label}
                   href={item.href}
                   className={`
@@ -65,7 +65,7 @@ export function Navigation() {
                 >
                   {item.label}
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-white rounded-full transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                </Link>
+                </TransitionLink>
               )
             })}
 
@@ -116,7 +116,7 @@ export function Navigation() {
           {navItems.map((item, index) => {
             const isActive = pathname === item.href
             return (
-              <Link
+              <TransitionLink
                 key={item.label}
                 href={item.href}
                 className={`
@@ -134,7 +134,7 @@ export function Navigation() {
                 }}
               >
                 {item.label}
-              </Link>
+              </TransitionLink>
             )
           })}
 
