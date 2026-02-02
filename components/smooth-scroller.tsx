@@ -33,8 +33,8 @@ export function SmoothScroller() {
                 }
 
                 animationId = requestAnimationFrame(raf)
-            } catch (error) {
-                console.log('[v0] Lenis initialization skipped:', error)
+            } catch {
+                // Lenis initialization skipped in non-browser environment
             }
         }
 

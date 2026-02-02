@@ -62,24 +62,24 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-6 relative z-10 w-full">
           {/* Header */}
           <div
-            className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
-            <p className="font-mono text-xs tracking-[0.3em] uppercase text-zinc-500 mb-4 font-medium">
+            <p className="font-mono text-sm tracking-[0.3em] uppercase text-zinc-400 mb-4 font-semibold">
               // CONTACT
             </p>
-            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Get In Touch
             </h1>
-            <div className="w-24 h-px bg-zinc-700 mx-auto mb-8" />
-            <p className="font-sans text-lg text-zinc-400 max-w-xl mx-auto">
+            <div className="w-24 h-px bg-zinc-600 mx-auto mb-6" />
+            <p className="font-sans text-lg text-zinc-300 max-w-xl mx-auto leading-relaxed">
               Available for security consulting, penetration testing engagements, and full-time opportunities.
             </p>
           </div>
 
           {/* Contact Links */}
           <div
-            className={`space-y-4 max-w-md mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`space-y-4 max-w-lg mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
             {contactLinks.map((link, index) => (
@@ -88,30 +88,29 @@ export default function ContactPage() {
                   href={link.label === 'Email' ? 'mailto:aabhashpaudel01@gmail.com' : link.href}
                   target={link.label === 'Email' ? undefined : '_blank'}
                   rel={link.label === 'Email' ? undefined : 'noopener noreferrer'}
-                  className="group flex items-center gap-8 p-10 md:p-12 bg-card/50 border border-zinc-800 rounded-xl hover:border-zinc-500 hover:bg-card hover:shadow-lg transition-all duration-300"
+                  className="group flex items-center gap-5 p-5 md:p-6 bg-zinc-900/80 border border-zinc-700 rounded-xl hover:border-zinc-500 hover:bg-zinc-800/90 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] transition-all duration-300 hover:scale-[1.02]"
                   style={{ transitionDelay: `${200 + index * 100}ms` }}
                 >
-                  <div className="text-zinc-500 group-hover:text-foreground transition-colors duration-300">
-                    {/* Increasing icon wrapper size */}
-                    <div className="w-8 h-8 md:w-10 md:h-10 [&>svg]:w-full [&>svg]:h-full">
+                  <div className="text-zinc-400 group-hover:text-white transition-colors duration-300">
+                    <div className="w-8 h-8 [&>svg]:w-full [&>svg]:h-full">
                       {link.icon}
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="font-mono text-xs md:text-sm uppercase text-zinc-500 mb-1 font-medium tracking-wider">
+                  <div className="flex-1 min-w-0">
+                    <p className="font-mono text-xs uppercase text-zinc-400 mb-1 font-semibold tracking-wider">
                       {link.label}
                     </p>
-                    <p className="font-sans text-lg md:text-xl lg:text-2xl text-zinc-300 group-hover:text-foreground transition-colors duration-300 font-medium">
+                    <p className="font-sans text-base md:text-lg text-zinc-200 group-hover:text-white transition-colors duration-300 font-medium truncate">
                       {link.value}
                     </p>
                   </div>
                   <svg
-                    className="w-6 h-6 text-zinc-600 group-hover:text-foreground group-hover:translate-x-2 transition-all duration-300"
+                    className="w-5 h-5 text-zinc-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
               </MedievalFrame>
@@ -120,14 +119,14 @@ export default function ContactPage() {
 
           {/* Footer */}
           <div
-            className={`text-center mt-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`text-center mt-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
-            <div className="w-16 h-px bg-zinc-800 mx-auto mb-6" />
-            <p className="font-sans text-sm text-zinc-500">
+            <div className="w-16 h-px bg-zinc-700 mx-auto mb-6" />
+            <p className="font-sans text-sm text-zinc-400">
               Bangalore, India
             </p>
-            <p className="font-mono text-xs text-zinc-600 mt-2">
+            <p className="font-mono text-xs text-zinc-500 mt-2">
               &copy; {new Date().getFullYear()} Aabhash Paudel
             </p>
           </div>

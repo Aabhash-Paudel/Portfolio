@@ -25,7 +25,7 @@ export default function Home() {
               className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-foreground drop-shadow-sm">
+              <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]">
                 Aabhash Paudel
               </h1>
             </div>
@@ -34,7 +34,7 @@ export default function Home() {
               className={`transition-all duration-1000 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <p className="font-mono text-sm md:text-base text-zinc-400 tracking-[0.3em] uppercase mb-8 font-medium">
+              <p className="font-mono text-sm md:text-base text-zinc-300 tracking-[0.3em] uppercase mb-8 font-semibold">
                 Cybersecurity Engineer
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function Home() {
             >
               <div className="w-16 h-px bg-zinc-700 mx-auto mb-8" />
 
-              <p className="font-sans text-lg md:text-xl text-zinc-300 tracking-wide max-w-2xl mx-auto leading-relaxed">
+              <p className="font-sans text-lg md:text-xl text-zinc-200 tracking-wide max-w-2xl mx-auto leading-relaxed font-medium">
                 Observation &bull; Discipline &bull; Defense
               </p>
             </div>

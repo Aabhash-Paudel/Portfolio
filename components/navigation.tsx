@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -38,16 +39,15 @@ export function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - Leftmost position */}
           <Link
             href="/"
-            className={`
-              font-sans text-lg font-bold relative tracking-tight
-              transition-all duration-500 hover:text-white
-              ${isScrolled ? 'text-foreground' : 'text-foreground'}
-            `}
+            className="group flex items-center gap-2 font-sans text-xl font-bold relative tracking-tight transition-all duration-500 hover:text-white text-foreground"
           >
-            A.P.
+            <span className="relative">
+              <span className="text-2xl font-black bg-gradient-to-br from-white to-zinc-400 bg-clip-text text-transparent">AP</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -59,14 +59,12 @@ export function Navigation() {
                   key={item.label}
                   href={item.href}
                   className={`
-                    relative font-sans text-sm font-medium transition-colors duration-300
-                    ${isActive ? 'text-white' : 'text-zinc-400 hover:text-white'}
+                    relative font-sans text-sm font-semibold transition-all duration-300 group
+                    ${isActive ? 'text-white' : 'text-zinc-300 hover:text-white'}
                   `}
                 >
                   {item.label}
-                  {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full" />
-                  )}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-white rounded-full transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                 </Link>
               )
             })}

@@ -393,20 +393,22 @@ export function Butterflies() {
     }
   }, [])
 
-  // Spawn spiders
+  // Spawn spiders - reduced count for better performance
   useEffect(() => {
-    for (let i = 0; i < 5; i++) {
-      setTimeout(() => spawnSpider(), i * 1000)
+    // Only spawn 3 spiders initially for better performance
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => spawnSpider(), i * 1500)
     }
 
     const interval = setInterval(() => {
       setSpiders(prev => {
-        if (prev.length < 5) {
+        // Keep max 3 spiders for smoother performance
+        if (prev.length < 3) {
           spawnSpider()
         }
         return prev
       })
-    }, 5000)
+    }, 8000) // Longer interval for less CPU usage
 
     return () => clearInterval(interval)
   }, [spawnSpider])
