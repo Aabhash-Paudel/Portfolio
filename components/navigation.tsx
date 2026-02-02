@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { TransitionLink } from './transition-link'
 
 const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -38,36 +39,33 @@ export function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
+          {/* Logo - Leftmost position */}
+          <TransitionLink
             href="/"
-            className={`
-              font-sans text-lg font-bold relative tracking-tight
-              transition-all duration-500 hover:text-white
-              ${isScrolled ? 'text-foreground' : 'text-foreground'}
-            `}
+            className="group flex items-center gap-2 font-sans text-xl font-bold relative tracking-tight transition-all duration-500 hover:text-white text-foreground"
           >
-            A.P.
-          </Link>
+            <span className="relative">
+              <span className="text-2xl font-black bg-gradient-to-br from-white to-zinc-400 bg-clip-text text-transparent">AP</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
+            </span>
+          </TransitionLink>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
-                <Link
+                <TransitionLink
                   key={item.label}
                   href={item.href}
                   className={`
-                    relative font-sans text-sm font-medium transition-colors duration-300
-                    ${isActive ? 'text-white' : 'text-zinc-400 hover:text-white'}
+                    relative font-sans text-sm font-semibold transition-all duration-300 group
+                    ${isActive ? 'text-white' : 'text-zinc-300 hover:text-white'}
                   `}
                 >
                   {item.label}
-                  {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white rounded-full" />
-                  )}
-                </Link>
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-white rounded-full transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                </TransitionLink>
               )
             })}
 
@@ -118,7 +116,7 @@ export function Navigation() {
           {navItems.map((item, index) => {
             const isActive = pathname === item.href
             return (
-              <Link
+              <TransitionLink
                 key={item.label}
                 href={item.href}
                 className={`
@@ -136,7 +134,7 @@ export function Navigation() {
                 }}
               >
                 {item.label}
-              </Link>
+              </TransitionLink>
             )
           })}
 

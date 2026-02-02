@@ -1,43 +1,28 @@
 "use client"
 
-import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useTransitionContext } from './transition-context'
 
 export function CurtainTransition() {
-    const pathname = usePathname()
-    const { setIsTransitioning } = useTransitionContext()
+    const { setIsTransitioning, isPageTransitionActive } = useTransitionContext()
     const shouldReduceMotion = useReducedMotion()
-
-    // Internal state to control the animation sequence
     const [isPresent, setIsPresent] = useState(false)
+    const hasAnimated = useRef(false)
 
     useEffect(() => {
-        // Trigger exit animation (curtain closing) when pathname changes
-        // But since Next.js navigates immediately, we are effectively animating "in" on the new page
-        // To do a true exit transition in Next.js App Router is tricky without a `template.tsx` or specialized wrapper.
-        // However, the prompt asks for "Curtain Closing Sequence (Page Exit)" and "Opening Sequence (Page Enter)".
-        // A common pattern in standard Next.js is to show the curtain *immediately* on mount (covering everything)
-        // and then open it.
-        // For the "Page Exit" feel, we rely on the fact that we can't easily block navigation in App Router 
-        // without experimental hooks.
-        // BUT, we can simulate the "Enter" (Opening) very well.
-
-        // To strictly follow "Page Exit" -> "Page Enter" flow, we would ideally need to intercept links.
-        // Given constraints, I will implement a robust "Entry" animation that LOOKS like it closed from the previous page.
-        // AND, I will trigger a "Close" state briefly if possible, or just start "Closed" and open.
-
-        // Let's go with: 
-        // 1. Component mounts -> state is "Closed" (Curtain down).
-        // 2. Spider descends/cuts.
-        // 3. Curtain Opens.
+        // Only trigger when page transition is active
+        if (!isPageTransitionActive) return
+        
+        // Prevent double animation
+        if (hasAnimated.current) return
+        hasAnimated.current = true
 
         setIsTransitioning(true)
         setIsPresent(true)
 
         const sequence = async () => {
-            // Wait for "cut" animation
+            // Wait for spider animation
             await new Promise(r => setTimeout(r, 1200))
 
             // Open curtain
@@ -46,11 +31,12 @@ export function CurtainTransition() {
             // Cleanup after curtain is gone
             await new Promise(r => setTimeout(r, 1000))
             setIsTransitioning(false)
+            hasAnimated.current = false
         }
 
         sequence()
 
-    }, [pathname, setIsTransitioning])
+    }, [isPageTransitionActive, setIsTransitioning])
 
     // Reduced motion: simple fade
     if (shouldReduceMotion) {

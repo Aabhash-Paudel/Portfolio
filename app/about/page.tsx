@@ -39,16 +39,16 @@ export default function AboutPage() {
       <Navigation />
 
       <section id="about" className="relative min-h-screen pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10 w-full">
           {/* Header */}
           <div
             className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
-            <p className="font-mono text-xs tracking-[0.3em] uppercase text-zinc-500 mb-4 font-medium">
+            <p className="font-mono text-sm tracking-[0.3em] uppercase text-zinc-400 mb-4 font-semibold">
               // ABOUT
             </p>
-            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               The Engineer
             </h1>
             <div className="w-24 h-px bg-zinc-700" />
@@ -79,7 +79,7 @@ export default function AboutPage() {
               className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <h2 className="font-sans text-2xl font-bold text-foreground mb-6">Education</h2>
+              <h2 className="font-sans text-2xl font-bold text-white mb-6">Education</h2>
               <MedievalFrame className="mb-6">
                 <div className="flex flex-col gap-4">
                   <div className="border-l-2 border-zinc-700 pl-4">
@@ -100,10 +100,10 @@ export default function AboutPage() {
               className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <h2 className="font-sans text-2xl font-bold text-foreground mb-6">Technical Skills</h2>
+              <h2 className="font-sans text-2xl font-bold text-white mb-6">Technical Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, i) => (
-                  <span key={i} className="px-3 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 font-mono hover:border-zinc-600 transition-colors cursor-default">
+                  <span key={i} className="px-3 py-1.5 rounded bg-zinc-800/80 border border-zinc-700 text-xs text-zinc-200 font-mono hover:border-zinc-500 hover:bg-zinc-700/80 transition-all duration-300 cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -115,7 +115,7 @@ export default function AboutPage() {
               className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <h2 className="font-sans text-2xl font-bold text-foreground mb-6">Certifications</h2>
+              <h2 className="font-sans text-2xl font-bold text-white mb-6">Certifications</h2>
               <MedievalFrame>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {certifications.map((cert, i) => (

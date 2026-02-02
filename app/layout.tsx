@@ -6,7 +6,7 @@ import { Panda3D } from '@/components/panda-3d'
 import { Butterflies as Spiders } from '@/components/butterflies'
 import { CurtainTransition } from '@/components/curtain-transition'
 import { TransitionProvider } from '@/components/transition-context'
-import { SmoothScroller } from '@/components/smooth-scroller'
+import { LoadingScreenWrapper } from '@/components/loading-screen-wrapper'
 import { CursorGlow } from '@/components/cursor-glow'
 import './globals.css'
 
@@ -41,8 +41,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary">
         <TransitionProvider>
-          <SmoothScroller />
-          {/* ScrollNavigator removed */}
+          <LoadingScreenWrapper />
           <CursorGlow />
           <CurtainTransition />
           <RestrictedContent>

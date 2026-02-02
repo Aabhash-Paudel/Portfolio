@@ -66,16 +66,16 @@ export default function ProjectsPage() {
       <Navigation />
 
       <section id="projects" className="relative min-h-screen pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
           {/* Header */}
           <div
             className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
           >
-            <p className="font-mono text-xs tracking-[0.3em] uppercase text-zinc-500 mb-4 font-medium">
+            <p className="font-mono text-sm tracking-[0.3em] uppercase text-zinc-400 mb-4 font-semibold">
               // PROJECTS
             </p>
-            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Projects
             </h1>
             <div className="w-24 h-px bg-zinc-700 mx-auto" />
@@ -105,35 +105,35 @@ export default function ProjectsPage() {
 
                     {/* Content */}
                     <div className="flex-1 flex flex-col justify-center">
-                      <h3 className="font-sans text-2xl font-bold text-foreground mb-4">
+                      <h3 className="font-sans text-2xl font-bold text-white mb-4">
                         {project.title}
                       </h3>
 
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2 mb-8">
                         {project.tech.map((t) => (
-                          <span key={t} className="px-2 py-1 bg-zinc-900 border border-zinc-700 text-xs font-mono text-zinc-400 rounded">
+                          <span key={t} className="px-2 py-1 bg-zinc-800/80 border border-zinc-600 text-xs font-mono text-zinc-200 rounded hover:border-zinc-500 transition-colors">
                             {t}
                           </span>
                         ))}
                       </div>
 
-                      <div className="space-y-6">
+                      <div className="space-y-5">
                         <div>
-                          <p className="font-mono text-[10px] uppercase text-zinc-500 mb-2 tracking-wider">PROBLEM</p>
-                          <p className="font-sans text-sm text-zinc-300 leading-relaxed">
+                          <p className="font-mono text-[11px] uppercase text-zinc-400 mb-2 tracking-wider font-semibold">PROBLEM</p>
+                          <p className="font-sans text-sm text-zinc-200 leading-relaxed">
                             {project.problem}
                           </p>
                         </div>
                         <div>
-                          <p className="font-mono text-[10px] uppercase text-zinc-500 mb-2 tracking-wider">APPROACH</p>
-                          <p className="font-sans text-sm text-zinc-300 leading-relaxed">
+                          <p className="font-mono text-[11px] uppercase text-zinc-400 mb-2 tracking-wider font-semibold">APPROACH</p>
+                          <p className="font-sans text-sm text-zinc-200 leading-relaxed">
                             {project.approach}
                           </p>
                         </div>
                         <div>
-                          <p className="font-mono text-[10px] uppercase text-zinc-500 mb-2 tracking-wider">OUTCOME</p>
-                          <p className="font-sans text-sm text-zinc-300 leading-relaxed">
+                          <p className="font-mono text-[11px] uppercase text-zinc-400 mb-2 tracking-wider font-semibold">OUTCOME</p>
+                          <p className="font-sans text-sm text-zinc-200 leading-relaxed">
                             {project.outcome}
                           </p>
                         </div>

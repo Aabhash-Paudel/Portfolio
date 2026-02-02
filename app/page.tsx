@@ -1,9 +1,9 @@
 "use client"
 
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Navigation } from '@/components/navigation'
 import { MedievalFrame } from '@/components/medieval-decorations'
+import { TransitionLink } from '@/components/transition-link'
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false)
@@ -19,13 +19,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Main content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto w-full">
           <MedievalFrame className="" title="Security Clearance: Level 5">
             <div
               className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-foreground drop-shadow-sm">
+              <h1 className="font-sans text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]">
                 Aabhash Paudel
               </h1>
             </div>
@@ -34,7 +34,7 @@ export default function Home() {
               className={`transition-all duration-1000 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
-              <p className="font-mono text-sm md:text-base text-zinc-400 tracking-[0.3em] uppercase mb-8 font-medium">
+              <p className="font-mono text-sm md:text-base text-zinc-300 tracking-[0.3em] uppercase mb-8 font-semibold">
                 Cybersecurity Engineer
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function Home() {
             >
               <div className="w-16 h-px bg-zinc-700 mx-auto mb-8" />
 
-              <p className="font-sans text-lg md:text-xl text-zinc-300 tracking-wide max-w-2xl mx-auto leading-relaxed">
+              <p className="font-sans text-lg md:text-xl lg:text-2xl text-zinc-200 tracking-wide max-w-3xl mx-auto leading-relaxed font-medium">
                 Observation &bull; Discipline &bull; Defense
               </p>
             </div>
@@ -56,18 +56,18 @@ export default function Home() {
                 }`}
             >
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
-                <Link
+                <TransitionLink
                   href="/projects"
                   className="group relative px-8 py-3 bg-foreground text-background font-semibold text-sm tracking-wide rounded border border-foreground overflow-hidden transition-all duration-300 hover:tracking-widest"
                 >
                   <span className="relative z-10">View Projects</span>
-                </Link>
-                <Link
+                </TransitionLink>
+                <TransitionLink
                   href="/contact"
                   className="btn-slide px-8 py-3 border border-zinc-700 text-zinc-300 font-semibold text-sm tracking-wide rounded transition-all duration-300 hover:border-foreground"
                 >
                   Get In Touch
-                </Link>
+                </TransitionLink>
               </div>
             </div>
           </MedievalFrame>
@@ -78,7 +78,7 @@ export default function Home() {
               }`}
           >
             <div className="mt-20">
-              <Link
+              <TransitionLink
                 href="/about"
                 className="group inline-flex flex-col items-center text-zinc-600 hover:text-zinc-300 transition-colors duration-500"
                 aria-label="Learn more about me"
@@ -99,7 +99,7 @@ export default function Home() {
                     d="M19 14l-7 7m0 0l-7-7m7 7V3"
                   />
                 </svg>
-              </Link>
+              </TransitionLink>
             </div>
           </div>
         </div>

@@ -121,27 +121,27 @@ function Cart({ className = "" }: { className?: string }) {
   )
 }
 
-// Decorative Frame Border - Mature Style
+// Decorative Frame Border - Mature Style with Medieval Animations
 export function MedievalFrame({ children, className = "", title }: { children: React.ReactNode; className?: string; title?: string }) {
   return (
-    <div className={`relative ${className}`}>
-      {/* Simple corner accents */}
-      <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-zinc-500/50" />
-      <div className="absolute -top-1 -right-1 w-3 h-3 border-t border-r border-zinc-500/50" />
-      <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b border-l border-zinc-500/50" />
-      <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b border-r border-zinc-500/50" />
+    <div className={`relative group ${className}`}>
+      {/* Animated corner accents */}
+      <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-zinc-500/60 transition-all duration-300 group-hover:w-6 group-hover:h-6 group-hover:border-zinc-400" />
+      <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-zinc-500/60 transition-all duration-300 group-hover:w-6 group-hover:h-6 group-hover:border-zinc-400" />
+      <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-zinc-500/60 transition-all duration-300 group-hover:w-6 group-hover:h-6 group-hover:border-zinc-400" />
+      <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-zinc-500/60 transition-all duration-300 group-hover:w-6 group-hover:h-6 group-hover:border-zinc-400" />
 
-      {/* Subtle sword decoration - Optional, very subtle */}
-      <div className="absolute -top-4 -right-4 opacity-20 pointer-events-none hidden md:block">
-        <Sword className="w-8 h-24 text-zinc-600" rotate={45} scale={0.5} />
+      {/* Subtle sword decoration with swing animation on hover */}
+      <div className="absolute -top-6 -right-6 opacity-15 pointer-events-none hidden md:block transition-all duration-500 group-hover:opacity-30 group-hover:animate-medieval-swing">
+        <Sword className="w-10 h-28 text-zinc-500" rotate={45} scale={0.5} />
       </div>
 
-      {/* Frame border */}
-      <div className="relative border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm rounded-lg p-6 hover:border-zinc-700 transition-colors duration-300">
+      {/* Frame border with glow effect on hover */}
+      <div className="relative border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm rounded-lg p-6 transition-all duration-300 group-hover:border-zinc-600 group-hover:bg-zinc-900/80 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]">
 
         {/* Header if title provided */}
         {title && (
-          <div className="absolute -top-3 left-6 bg-zinc-900 border border-zinc-700 px-3 py-0.5 rounded text-xs font-mono text-zinc-400 uppercase tracking-wider">
+          <div className="absolute -top-3 left-6 bg-zinc-900 border border-zinc-600 px-3 py-1 rounded text-xs font-mono text-zinc-300 uppercase tracking-wider transition-colors duration-300 group-hover:border-zinc-500 group-hover:text-zinc-200">
             {title}
           </div>
         )}
