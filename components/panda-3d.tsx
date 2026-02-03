@@ -28,56 +28,110 @@ const PANDA_ASSETS: Record<PandaState, string> = {
 }
 
 const DIALOGUES_GENERAL = [
-    "Hey! I live here now.",
-    "This is Aabhash’s portfolio... yeah, he’s kinda cool.",
-    "Scroll slowly. I’m watching.",
-    "Cybersecurity isn’t magic. It’s discipline.",
-    "He breaks systems... legally.",
+    "Hey, I guard this portfolio. Pretty secure, right?",
+    "This is Aabhash. He defends systems for a living.",
+    "Cybersecurity isn't about hacks. It's about discipline.",
+    "Scroll carefully. Threats hide everywhere.",
+    "Logs don't lie. Aabhash reads them like stories.",
+    "Yes, he actually enjoys SIEM dashboards.",
+    "Defense first. Always.",
+    "He thinks in MITRE ATT&CK patterns.",
+    "Security is a mindset, not just tools.",
+    "Every alert tells a story.",
 ]
 
 const DIALOGUES_CYBER = [
-    "SOC mindset. Attacker brain.",
-    "Logs don’t lie. People do.",
-    "MITRE ATT&CK? He speaks it fluently.",
-    "He finds bugs before hackers do.",
-    "Metasploit is basically his second brain.",
-    "Analysis of PE headers is tricky!",
-    "I guard your endpoints.",
+    "Cybersecurity is chess, not checkers.",
+    "Attackers sleep. Defenders don't.",
+    "Every packet matters.",
+    "Security is invisible when done right.",
+    "If it logs, it can be monitored.",
+    "If it's exposed, it's vulnerable.",
+    "Threat hunting is basically detective work.",
+    "Firewalls are good. Awareness is better.",
+    "Automation saves time. Intelligence saves systems.",
+    "Security is calm under pressure.",
 ]
 
 const DIALOGUES_SKILLS = [
-    "Python, SIEMs, networks... he juggles them all.",
-    "Burp Suite? Nmap? Old friends.",
-    "He once reduced scan time by sixty percent.",
-    "Defense wins championships. Offense wins respect.",
-    "Reverse engineering malware is fun!",
+    "I think he likes Python more than sleep.",
+    "Metasploit feels like home to him.",
+    "Burp Suite? Old friend.",
+    "He scans networks like I scan for snacks.",
+    "Reducing false positives is an art.",
+    "Alerts first, panic never.",
+    "Defense wins long games.",
+    "Red team knowledge makes blue teams stronger.",
+    "Logs are just whispers until analyzed.",
+    "Security is curiosity with responsibility.",
 ]
 
 const DIALOGUES_FUN = [
-    "Sometimes he forgets to eat while debugging.",
-    "He drinks tea like it’s a patch update.",
-    "Yes, he actually enjoys log analysis.",
-    "Don’t ask how many tabs he has open.",
-    "I love bamboo... and code.",
+    "Sometimes he forgets food while debugging.",
+    "Security work runs on tea and focus.",
+    "Yes, he enjoys log analysis. Seriously.",
+    "Weekends are for labs and learning.",
+    "He breaks systems… ethically.",
+    "Every vulnerability teaches a lesson.",
+    "Security is patience with precision.",
+    "Calm mind, sharp analysis.",
+    "He believes prevention beats reaction.",
+    "Learning never stops in cybersecurity.",
 ]
 
 const DIALOGUES_HUNGRY = [
-    "I’m hungry... is this a food website?",
-    "Cybersecurity runs on snacks.",
-    "Do you have any dumplings?",
+    "I'm hungry. Cybersecurity burns calories.",
+    "Even pandas need breaks.",
+    "Security first, snacks later.",
+    "Threat hunting makes me hungry.",
+    "I'll eat after the scan finishes.",
+    "Coffee is basically an authentication factor.",
+    "Debugging builds character.",
+    "Every alert is a puzzle.",
+    "Security is serious… I'm just cute.",
+    "Let's keep things secure and simple.",
 ]
 
 const DIALOGUES_FLIRTY = [
-    "You scroll nicely, you know that?",
-    "If curiosity were a person... it’d be you.",
-    "Don’t worry, I only flirt professionally.",
-    "My chi is strong today. ✨",
+    "Hey recruiter, you should scroll slower.",
+    "You look like someone who values security.",
+    "Is your network protected? Asking professionally.",
+    "I see curiosity in your clicks.",
+    "You hover like a SOC analyst.",
+    "Careful… you're entering secure territory.",
+    "We can talk exploits over coffee.",
+    "I promise fewer incidents if you hire him.",
+    "Your systems called. They want Aabhash.",
+    "This connection feels encrypted.",
 ]
 
 const DIALOGUES_TIRED = [
     "System scan complete... I need a nap.",
     "Ugh, so many logs to check.",
     "Power saving mode initiated.",
+]
+
+const DIALOGUES_HIRING = [
+    "Looking for a cybersecurity engineer?",
+    "Hiring? I know a very good one.",
+    "This portfolio is open for opportunities.",
+    "Aabhash is available for security roles.",
+    "SOC analyst? Blue team? He fits right in.",
+    "Need someone who understands threats deeply?",
+    "Your company, but safer.",
+    "He secures systems like a panda guards bamboo.",
+    "Want fewer breaches? Start here.",
+    "He's ready for real-world security challenges.",
+    "Need a security audit?",
+    "Need a SOC analyst?",
+    "Need someone who understands attackers?",
+    "Need fewer sleepless nights?",
+    "Need real defense, not buzzwords?",
+    "Your infrastructure deserves better security.",
+    "Aabhash builds systems that resist chaos.",
+    "Let's secure something important.",
+    "Your data deserves protection.",
+    "Security starts with the right engineer.",
 ]
 
 const DIALOGUES_SKELETON = [
@@ -142,20 +196,21 @@ export function Panda3D() {
         setMounted(true)
 
         const stateLoop = setInterval(() => {
-            // Don't switch state if user is hovering, or if we are in a "locked" state like serious(scroll) or skeleton
-            // Also pause if transitioning
-            if (isTransitioning || isHovered || currentState === 'skeleton' || currentState === 'serious') return
+            // Don't switch state if user is hovering or if skeleton (clicked too much)
+            // Allow transitions to happen naturally
+            if (isTransitioning || isHovered || currentState === 'skeleton') return
 
             // Randomly decide to switch state
             const rand = Math.random()
             let newState: PandaState = 'idle'
 
-            if (rand < 0.5) newState = 'idle'
-            else if (rand < 0.65) newState = 'confused'
-            else if (rand < 0.75) newState = 'hungry'
-            else if (rand < 0.85) newState = 'flirty'
-            else if (rand < 0.95) newState = 'tired'
-            else newState = 'happy' // Rare happy
+            if (rand < 0.4) newState = 'idle'
+            else if (rand < 0.55) newState = 'confused'
+            else if (rand < 0.68) newState = 'hungry'
+            else if (rand < 0.8) newState = 'flirty'
+            else if (rand < 0.9) newState = 'tired'
+            else if (rand < 0.95) newState = 'serious'
+            else newState = 'happy'
 
             setCurrentState(newState)
 
@@ -166,16 +221,17 @@ export function Panda3D() {
                     case 'hungry': line = getRandomDialogue(DIALOGUES_HUNGRY); break;
                     case 'flirty': line = getRandomDialogue(DIALOGUES_FLIRTY); break;
                     case 'tired': line = getRandomDialogue(DIALOGUES_TIRED); break;
-                    case 'confused': line = getRandomDialogue(DIALOGUES_FUN); break; // Quirky lines
-                    default: line = getRandomDialogue([...DIALOGUES_GENERAL, ...DIALOGUES_CYBER, ...DIALOGUES_SKILLS]);
+                    case 'confused': line = getRandomDialogue(DIALOGUES_FUN); break;
+                    case 'serious': line = getRandomDialogue(DIALOGUES_CYBER); break;
+                    default: line = getRandomDialogue([...DIALOGUES_GENERAL, ...DIALOGUES_CYBER, ...DIALOGUES_SKILLS, ...DIALOGUES_HIRING]);
                 }
                 triggerDialogue(line)
             }
 
-        }, 8000 + Math.random() * 4000) // Every 8-12 seconds
+        }, 5000 + Math.random() * 3000) // Every 5-8 seconds for more dynamic changes
 
         return () => clearInterval(stateLoop)
-    }, [currentState, isHovered, triggerDialogue]) // Added triggerDialogue dependency for safety
+    }, [currentState, isHovered, isTransitioning, triggerDialogue])
 
     // --- Spider Interaction ---
     useEffect(() => {
@@ -196,35 +252,7 @@ export function Panda3D() {
         return () => window.removeEventListener('butterfly-killed', handleSpiderDeath)
     }, [currentState, triggerDialogue])
 
-    // --- Scroll Reactions ---
-    useMotionValueEvent(scrollY, "change", (latest) => {
-        if (currentState === 'skeleton') return
 
-        const velocity = scrollY.getVelocity()
-
-        // High speed scroll = Serious
-        if (Math.abs(velocity) > 1200) {
-            if (currentState !== 'serious') {
-                setCurrentState('serious')
-                // Trigger cyber dialogue rarely on fast scroll
-                if (Math.random() > 0.8) triggerDialogue(getRandomDialogue(DIALOGUES_CYBER), 2000)
-            }
-
-            clearTimeout((window as any).scrollTimeout)
-                ; (window as any).scrollTimeout = setTimeout(() => {
-                    if (currentState !== 'skeleton') setCurrentState('idle')
-                }, 600)
-        }
-
-        // Bottom of page
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight
-        if (latest > docHeight - 100) {
-            if (currentState !== 'happy' && currentState !== 'skeleton') {
-                setCurrentState('happy')
-                triggerDialogue("Still here? I like you.")
-            }
-        }
-    })
 
     // --- Click / Touch Logic ---
 
