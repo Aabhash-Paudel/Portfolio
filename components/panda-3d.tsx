@@ -309,7 +309,7 @@ export function Panda3D() {
                         whileTap={{ scale: 0.95, rotate: -5 }}
                     >
                         {/* Chroma Key Filter Application */}
-                        <div className="relative w-full h-full filter-remove-white">
+                        <div className="relative w-full h-full">
                             <Image
                                 src={PANDA_ASSETS[currentState] || PANDA_ASSETS['idle']}
                                 alt={`Panda ${currentState}`}
@@ -326,10 +326,7 @@ export function Panda3D() {
             </div>
 
             <style jsx global>{`
-        .filter-remove-white {
-          filter: url(#remove-white);
-          -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-        }
+
         @keyframes bounce-slight {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
@@ -339,20 +336,7 @@ export function Panda3D() {
         }
       `}</style>
 
-            {/* SVG Filter Definition */}
-            <svg className="h-0 w-0 absolute">
-                <defs>
-                    <filter id="remove-white" colorInterpolationFilters="sRGB">
-                        <feColorMatrix
-                            type="matrix"
-                            values="1 0 0 0 0
-                      0 1 0 0 0
-                      0 0 1 0 0
-                      -3 -3 -3 1 2.95"
-                        />
-                    </filter>
-                </defs>
-            </svg>
+
         </div>
     )
 }

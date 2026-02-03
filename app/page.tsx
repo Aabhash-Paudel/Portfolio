@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Main content */}
-        <div className="relative z-10 text-center px-6 md:px-12 max-w-6xl mx-auto w-full">
+        <div className="relative z-10 text-center px-6 md:px-12 lg:px-24 w-full max-w-[1920px] mx-auto">
           <MedievalFrame className="" title="Security Clearance: Level 5">
             <div
               className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

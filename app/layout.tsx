@@ -28,7 +28,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Cybersecurity & Development',
+  title: 'Aabhash Paudel | Cybersecurity & Development',
   description: 'Cybersecurity Analyst and Developer Portfolio',
 }
 

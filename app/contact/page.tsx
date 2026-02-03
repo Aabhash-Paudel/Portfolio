@@ -59,7 +59,7 @@ export default function ContactPage() {
       <Navigation />
 
       <section id="contact" className="relative min-h-screen pt-24 pb-16 flex items-center">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 w-full">
+        <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
           {/* Header */}
           <div
             className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
