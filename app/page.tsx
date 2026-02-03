@@ -84,7 +84,7 @@ export default function Home() {
                 aria-label="Learn more about me"
               >
                 <span className="font-mono text-xs mb-3 opacity-70 group-hover:opacity-100 transition-opacity">
-                  scroll to explore
+                  click to explore
                 </span>
                 <svg
                   className="w-5 h-5 animate-pulse"
