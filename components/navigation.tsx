@@ -44,7 +44,7 @@ export function Navigation() {
             href="/"
             className="group flex items-center gap-2 font-sans text-xl font-bold relative tracking-tight transition-all duration-500 hover:text-white text-foreground"
           >
-            <div className="relative w-8 h-8 mr-2">
+            <div className="relative w-16 h-16 mr-2">
               <img
                 src="/assets/spider-red-eyes.png"
                 alt="Spider Logo"
@@ -59,20 +59,41 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => {
+            {navItems.map((item, index) => {
               const isActive = pathname === item.href
               return (
-                <TransitionLink
-                  key={item.label}
-                  href={item.href}
-                  className={`
-                    relative font-sans text-sm font-semibold transition-all duration-300 group
-                    ${isActive ? 'text-white' : 'text-zinc-300 hover:text-white'}
-                  `}
-                >
-                  {item.label}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-white rounded-full transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                </TransitionLink>
+                <div key={item.label} className="relative group">
+                  <TransitionLink
+                    href={item.href}
+                    className={`
+                      relative font-sans text-sm font-semibold transition-all duration-300
+                      ${isActive ? 'text-white' : 'text-zinc-300 hover:text-white'}
+                    `}
+                  >
+                    {item.label}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-white rounded-full transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                  </TransitionLink>
+
+                  {/* Hanging Pumpkin */}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-1 pointer-events-none">
+                    {/* Spider Web String */}
+                    <div className="w-px h-4 bg-gradient-to-b from-zinc-600/50 to-transparent mx-auto" />
+
+                    {/* Pumpkin */}
+                    <div
+                      className="pumpkin-swing group-hover:pumpkin-swing-hover"
+                      style={{
+                        animationDelay: `${index * 0.5}s`
+                      }}
+                    >
+                      <img
+                        src="/assets/hanging-pumpkin.png"
+                        alt="Halloween Pumpkin"
+                        className="w-24 h-24 object-contain drop-shadow-[0_0_20px_rgba(255,140,0,0.9)]"
+                      />
+                    </div>
+                  </div>
+                </div>
               )
             })}
 
