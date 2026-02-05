@@ -49,7 +49,7 @@ export default function AboutPage() {
               // ABOUT
             </p>
             <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              The Engineer
+              About me
             </h1>
             <div className="w-24 h-px bg-zinc-700" />
           </div>
@@ -83,13 +83,13 @@ export default function AboutPage() {
               <MedievalFrame className="mb-6">
                 <div className="flex flex-col gap-4">
                   <div className="border-l-2 border-zinc-700 pl-4">
-                    <h3 className="text-lg font-semibold text-zinc-100">JNTU Anantapur</h3>
+                    <h3 className="text-lg font-semibold text-zinc-100">JNTU Anantapur Affiliation</h3>
                     <p className="text-zinc-400 text-sm">Bachelor of Technology - BTech, Computer Science (Cyber Security)</p>
                     <p className="text-zinc-500 text-xs font-mono mt-1">2022 - 2026</p>
                   </div>
                   <div className="border-l-2 border-zinc-700 pl-4">
                     <h3 className="text-lg font-semibold text-zinc-100">Sri Venkateswara College of Engineering and Technology, Chittoor</h3>
-                    <p className="text-zinc-400 text-sm">Bachelor of Technology - BTech, Computer Science and Technology</p>
+                    <p className="text-zinc-400 text-sm">Bachelor of Technology - BTech, Computer Science and Technology (Cyber Security)</p>
                   </div>
                 </div>
               </MedievalFrame>
