@@ -99,7 +99,7 @@ export function Navigation() {
 
             {/* View Resume Button */}
             <a
-              href="/assets/resume.pdf"
+              href="/assets/resume_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2 border border-zinc-700 text-zinc-300 hover:border-white hover:text-white text-sm font-semibold rounded transition-all duration-300"
@@ -168,7 +168,7 @@ export function Navigation() {
 
           {/* Mobile Resume Button */}
           <a
-            href="/assets/resume.pdf"
+            href="/assets/resume_2025.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="block font-sans text-sm py-3 px-4 mt-4 border border-zinc-700 text-zinc-300 text-center rounded hover:border-white hover:text-white"
