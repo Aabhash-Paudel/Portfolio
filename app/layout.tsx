@@ -28,8 +28,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Aabhash Paudel | Cybersecurity & Development',
-  description: 'Cybersecurity Analyst and Developer Portfolio',
+  title: 'Aabhash Paudel | SOC Analyst | Cybersecurity Portfolio',
+  description: 'Aabhash Paudel - SOC Analyst from Nepal specializing in cybersecurity, SIEM, and threat detection.',
 }
 
 export default function RootLayout({

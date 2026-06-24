@@ -35,7 +35,7 @@ export default function Home() {
                 }`}
             >
               <p className="font-mono text-sm md:text-base text-zinc-300 tracking-[0.3em] uppercase mb-8 font-semibold">
-                Cybersecurity Engineer
+                SOC Analyst & Cybersecurity Engineer
               </p>
             </div>
 
@@ -46,7 +46,7 @@ export default function Home() {
               <div className="w-16 h-px bg-zinc-700 mx-auto mb-8" />
 
               <p className="font-sans text-lg md:text-xl lg:text-2xl text-zinc-200 tracking-wide max-w-3xl mx-auto leading-relaxed font-medium">
-                Observation &bull; Discipline &bull; Defense
+                Hi, I’m Aabhash Paudel, a SOC Analyst and cybersecurity enthusiast specializing in SIEM, log analysis, and proactive threat detection.
               </p>
             </div>
 
