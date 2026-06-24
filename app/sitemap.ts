@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Replace with your actual domain when deploying
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://aabhashpaudel.com'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.aabhashpaudel.com.np'
 
   // Define your routes with their respective properties
   const routes: MetadataRoute.Sitemap = [
