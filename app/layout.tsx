@@ -50,7 +50,7 @@ export default function RootLayout({
           <Spiders />
           <Panda3D />
         </TransitionProvider>
-        <div className="fixed inset-0 z-[-1] pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800/20 via-background to-background" />
+        <div className="fixed inset-0 z-[-1] pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/40 via-purple-600/20 to-background" />
         <Analytics />
       </body>
     </html>

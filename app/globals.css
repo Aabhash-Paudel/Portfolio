@@ -4,9 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Mature Monochromatic Theme */
-  --background: #09090b;
-  --foreground: #fafafa;
+  /* Bright Professional Theme */
+  --background: #0f172a;
+  --foreground: #f8fafc;
 
   --card: #18181b;
   --card-foreground: #fafafa;

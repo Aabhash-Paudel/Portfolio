@@ -116,7 +116,48 @@ const FlowerCorner = ({ className = "" }: { className?: string }) => (
   </svg>
 )
 
+const MalwareClassifierDiagram = () => (
+  <div className="relative w-full h-full bg-parchment-dark/50 p-4 flex items-center justify-center">
+    <svg viewBox="0 0 200 150" className="w-full h-full max-h-48">
+      {/* File icon */}
+      <path d="M30 40 L50 40 L60 50 L60 90 L30 90 Z" fill="none" stroke="#7A8F7A" strokeWidth="1" />
+      <path d="M50 40 L50 50 L60 50" fill="none" stroke="#7A8F7A" strokeWidth="1" />
+      <text x="45" y="70" textAnchor="middle" fill="#7A8F7A" fontSize="8" fontFamily="sans-serif">PE</text>
+      
+      {/* Neural network / AI Box */}
+      <rect x="100" y="30" width="60" height="70" fill="none" stroke="#B59A5A" strokeWidth="1.5" rx="4" />
+      <circle cx="115" cy="50" r="4" fill="none" stroke="#B59A5A" strokeWidth="0.5" />
+      <circle cx="115" cy="80" r="4" fill="none" stroke="#B59A5A" strokeWidth="0.5" />
+      <circle cx="145" cy="65" r="4" fill="none" stroke="#B59A5A" strokeWidth="0.5" />
+      <line x1="119" y1="50" x2="141" y2="65" stroke="#B59A5A" strokeWidth="0.5" />
+      <line x1="119" y1="80" x2="141" y2="65" stroke="#B59A5A" strokeWidth="0.5" />
+      <text x="130" y="115" textAnchor="middle" fill="#B59A5A" fontSize="8" fontFamily="serif">ML</text>
+
+      {/* Scanning laser/line */}
+      <line x1="65" y1="65" x2="95" y2="65" stroke="#B59A5A" strokeWidth="1" strokeDasharray="4,2">
+        <animate attributeName="stroke-dashoffset" from="6" to="0" dur="0.5s" repeatCount="indefinite" />
+      </line>
+
+      {/* Result indicator */}
+      <circle cx="145" cy="65" r="8" fill="none" stroke="#6E3B3B" strokeWidth="1" opacity="0">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="4;10;4" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </div>
+)
+
 const projects = [
+  {
+    title: "Alt Malware File Classifier",
+    fullTitle: "Alt Malware File Classifier",
+    technologies: "Python, Flask, React, LightGBM",
+    symbol: "A",
+    problem: "Real-time malware analysis of Windows PE files required a fast, end-to-end system capable of accurate predictions without executing potentially dangerous files.",
+    approach: "Developed a malware detection system combining a Machine Learning Backend with a modern Frontend. Implemented static analysis to extract features using LIEF without file execution, powered by a pre-trained LightGBM model.",
+    outcome: "Achieved a 98.5% accuracy rate in real-time malware analysis, offering an intuitive drag & drop UI and optional VirusTotal integration for hash-based verification.",
+    diagram: <MalwareClassifierDiagram />
+  },
   {
     title: "Vulnerability Scanner",
     fullTitle: "In-Depth Vulnerability Scanner",

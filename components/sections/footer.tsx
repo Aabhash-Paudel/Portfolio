@@ -41,7 +41,9 @@ export function Footer() {
         {/* Contact Links */}
         <div className="flex items-center justify-center gap-8 mb-8">
           <a 
-            href="mailto:aabhashpaudel01@gmail.com" 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=aabhashpaudel01@gmail.com" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-sans text-muted-foreground hover:text-ink transition-colors duration-300"
             aria-label="Email"
           >
@@ -63,7 +65,7 @@ export function Footer() {
           </a>
           
           <a 
-            href="https://linkedin.com/in/aabhash-paudel" 
+            href="https://www.linkedin.com/in/aabhash-paudel-907b41293/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="font-sans text-muted-foreground hover:text-ink transition-colors duration-300"
