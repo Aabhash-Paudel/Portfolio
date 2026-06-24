@@ -77,9 +77,19 @@ export function Footer() {
           </a>
         </div>
 
+        {/* SEO / Quick Links */}
+        <div className="mb-6">
+          <a 
+            href="/soc-analyst-nepal" 
+            className="font-sans text-xs text-muted-foreground/80 hover:text-ink transition-colors duration-300"
+          >
+            SOC Analyst in Nepal
+          </a>
+        </div>
+
         {/* Colophon */}
         <p className="font-sans text-sm text-muted-foreground">
-          Crafted with discipline &bull; Banguluru, India
+          Crafted with discipline &bull; Kathmandu, Nepal
         </p>
         <p className="font-sans text-xs text-muted-foreground/60 mt-2">
           &copy; {new Date().getFullYear()} Aabhash Paudel

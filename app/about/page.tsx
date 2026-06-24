@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Navigation } from '@/components/navigation'
 import { MedievalFrame } from '@/components/medieval-decorations'
+import { TransitionLink } from '@/components/transition-link'
 
 const certifications = [
   { name: "Phishing Analyzer", issuer: "LetsDefend", date: "Dec 2025" },
@@ -129,6 +130,24 @@ export default function AboutPage() {
                   ))}
                 </div>
               </MedievalFrame>
+            </div>
+
+            {/* Redirection Link */}
+            <div
+              className={`pt-12 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+            >
+              <TransitionLink
+                href="/soc-analyst-nepal"
+                className="group inline-flex flex-col items-center text-zinc-400 hover:text-white transition-colors duration-500"
+              >
+                <span className="font-mono text-sm tracking-widest uppercase mb-3 opacity-80 group-hover:opacity-100 transition-opacity">
+                  Learn more about my role in Nepal
+                </span>
+                <span className="px-6 py-2 border border-zinc-700 rounded text-sm font-semibold hover:border-zinc-500 transition-all duration-300">
+                  Read SOC Analyst Profile
+                </span>
+              </TransitionLink>
             </div>
 
           </div>
